@@ -1,0 +1,11 @@
+﻿@model CurrencyDropDownModel
+<h3>Convert</h3>
+<div>
+    @Html.LabelFor(m => m.SelectedFlavorId)
+    @Html.DropDownListFor(m => m.SelectedFlavorId, Model.FlavorItems)
+    @Html.ValidationMessageFor(m => m.SelectedFlavorId)
+    <input type="submit" value="Submit" />
+</div>
+<div>
+   
+</div>

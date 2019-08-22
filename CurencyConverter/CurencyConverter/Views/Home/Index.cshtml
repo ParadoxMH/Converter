@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ApplicationCore.Entities.Currency>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div class="page-header">
+    <h2>Search for an attachment</h2>
+    @Html.Partial("_Convert", new CurrencyDropDownModel(Model.ToList()))
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SaleRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abreviation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            @*<th></th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SaleRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchaseRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Abreviation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
